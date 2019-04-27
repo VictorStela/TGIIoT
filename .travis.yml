@@ -1,0 +1,14 @@
+language: node_js
+node_js:
+- node
+install: true
+script: echo "Skipping build"
+deploy:
+  edge: true
+  provider: bluemixcloudfoundry
+  username: apikey
+  organization: rrl.raoni@gmail.com
+  space: dev
+  manifest: manifest.yml
+  password:
+    secure: l74M4wXJjMg0HQMx/O2mcKNLWKA3yAnUsc8U33YfcHGnVkVlOgELhFAiqGcl+1V+GAdfMl4hqvO4C3B6s0KmWVXHLX2ybqi0u8p5UgoooJjZe5iQ4NZLAknjcj/XiziH18Kvh4rXexS8TokbFLHNQBHWsKsogA7rCjgRQ4zXHcox+xyC4AOaQ7jdyLr3R5TPqLYDQV3te2ObD7jpW5emBRvjTlw0vtwgOxblHiZiZSG+1Q6nZyDJyBLhoCM4nPzS8SLtewcr7uB6qO5oDyOcmNjM0jpl1GRMVik225gzvgk1PmE0hie2C45TcKBAx08FA8O+3jqyPkWFD0GOMRnIaWUjFjiXqXpe/PnRKxzQExfwwzTn4j4R1CPC19jzxrp3/Kt6TS4FB/XJaNsJykPvy8k5h2XAted9pgVFghjnDlvOiIIqJofitpEtbQJ6AUSmaIA1tGdIEcUwr1GNZ8MdUZHtqhNv5Yw1z4vq6pxdlfJXq4njhDIy/td9FOaBjcLC+wdQZa+16TMs6ikpAl3mdlwq6hVwqgQ1hqUoCoBmCQSvhm9c4QnyHd5PvsNLlzLP+6WPH1YMLvn6waKeepuI62i2BePUw876qoWDEWge18PgvBMd5eFXLyMogevnj0QE6sXQhB1Nr7e5jDFKAgxgQSsc7y9ggSFH5hSIHbz1vZI=

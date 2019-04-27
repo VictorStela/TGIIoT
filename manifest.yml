@@ -1,0 +1,4 @@
+applications:
+- name: TGIIoT
+  memory: 512MB
+  instances: 1
