@@ -1,0 +1,134 @@
+    <style>
+
+    body.nr-dashboard-theme {
+        background-color: #e9dfdf;
+        font-family: Arial;
+    }
+    button, html, input, select, textarea {
+        font-family: Arial;
+    }
+    body.nr-dashboard-theme md-content md-card {
+        background-color: #33333300;
+        color: #d0d0d0;
+    }
+
+    body.nr-dashboard-theme md-sidenav{
+        background-image: linear-gradient(to right, rgba(183,222,237,1) 0%, rgba(233,223,223,1) 100%);
+        font-family: Arial;;
+    }
+
+    body.nr-dashboard-theme md-list{
+        color: #707070;
+    }
+
+    body.nr-dashboard-theme .nr-menu-item-active {
+        color: rgb(55, 170, 216);
+    }
+
+    body.nr-dashboard-theme .md-list-item-inner{
+        background-image: linear-gradient(to right, rgba(183,222,237,1) 0%, rgba(233,223,223,1) 100%);
+    }
+
+    body.nr-dashboard-theme md-toolbar {
+        background-image: c;
+        box-shadow: 0px 1px 15px #000000;
+    }
+
+    body.nr-dashboard-theme md-toolbar .ng-binding {
+        color: black;
+    }
+
+    body.nr-dashboard-theme md-toolbar .ng-scope {
+        color: black;
+    }
+
+    .nr-dashboard-theme ui-card-panel {
+        background-image: linear-gradient(45deg, rgba(247,247,247,1) 0%, rgba(227,227,227,1) 51%, rgba(240,240,240,1) 74%, rgba(255,255,255,1) 100%);
+        border: 1px solid #555555;
+        box-shadow: 0 0 20px #00000066;
+    }
+
+    .nr-dashboard-theme ui-card-panel p.nr-dashboard-cardtitle {
+        width: 800px;
+        height: 48px;
+        background-image: linear-gradient(to right, rgba(102,188,222,1) 0%, rgba(233,223,223,1) 100%);
+        border-radius: 20px 20px 20px 20px;
+        text-align: center;
+        box-shadow: 0px 0px 17px 1px rgba(0,0,0,0.75);
+        color: black;
+        text-shadow: 0 0 2px black;
+    }
+
+    .nr-dashboard-theme .nr-dashboard-form-button {
+        width: 210px;
+        height: 48px;
+        background-image: linear-gradient(to right, rgba(102,188,222,1) 0%, rgba(233,223,223,1) 100%);
+        color: #0a0a0a;
+        text-shadow: 0 0 2px #525252;
+        border-radius:6px;
+    }
+
+    .nr-dashboard-theme .nr-dashboard-form-button:hover {
+        background-image: linear-gradient(to right, rgb(0, 150, 209) 0%, rgb(179, 176, 176) 100%);;
+    }
+    
+    .nr-dashboard-theme .nr-dashboard-form-button:active {
+        background-image: linear-gradient(to right, rgb(0, 17, 255) 0%, rgb(179, 176, 176) 100%);;
+    }
+
+    .nr-dashboard-theme .nr-dashboard-button .md-button {
+        background-image: linear-gradient(to right, rgba(102,188,222,1) 0%, rgba(233,223,223,1) 100%);
+        color: #0a0a0a;
+        text-shadow: 0 0 2px #525252;
+        border-radius:6px;
+    }
+
+    .nr-dashboard-theme .nr-dashboard-button .md-button:hover {
+        background-image: linear-gradient(to right, rgb(0, 150, 209) 0%, rgb(179, 176, 176) 100%);;
+    }
+
+    .nr-dashboard-theme .nr-dashboard-button .md-button:active {
+        background-image: linear-gradient(to right, rgb(0, 17, 255) 0%, rgb(179, 176, 176) 100%);;
+    }
+
+    .nr-dashboard-theme .nr-dashboard-form md-switch .md-thumb {
+        background-image: linear-gradient(to bottom right, rgb(0, 17, 255), #115009);
+    }
+
+    .nr-dashboard-theme .nr-dashboard-switch md-switch .md-thumb {
+        background-image: linear-gradient(to bottom right, rgb(0, 17, 255), #115009);
+    }
+
+    .nr-dashboard-button .md-button {
+        box-shadow: 0 1px 3px 0 rgba(0,0,0,.26)!important;
+        width: 100%!important;
+        height: 100%!important;
+        margin: 0!important;
+        min-width: 0!important;
+        min-height: 0!important;
+    }
+    .nr-dashboard-theme .nr-dashboard-slider .md-thumb:after {
+        background-image: linear-gradient(to bottom right, #48b349, #115009);
+        border-style: none;
+    }
+    .nr-dashboard-theme .nr-dashboard-numeric .value {
+        background-color: #33333300;
+        color:#d0d0d0;
+    }
+
+    .nr-dashboard-numeric .value {
+        font-weight: 700;
+        text-align: center;
+        border: 0;
+    }
+
+    .nr-dashboard-form {
+        display: inline-block;
+        width: 100%;
+        overflow-y: visible;
+    }
+    #SETTINGS_TEATED_cards {
+        min-height: 260px;
+    }
+
+    </style>
