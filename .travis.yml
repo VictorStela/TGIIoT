@@ -1,8 +1,4 @@
 language: ruby
-rvm:
-  - 1.8.30
-gemfile:
-  - Gemfile
 before_install:
   - gem update --system 1.8.30
   - gem --version
@@ -13,7 +9,7 @@ install: true
 script:
   - echo "Skipping build"
 deploy:
-  edge: true
+  edge: false
   provider: bluemixcloudfoundry
   username: apikey
   organization: rrl.raoni@gmail.com
