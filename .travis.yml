@@ -1,8 +1,6 @@
 language: ruby
-install:
-  - gem uninstall -aIx dpl
-  - gem install dpl -v 1.10.3.travis.3002.6 --pre
-  - gem install dpl-bluemix_cloud_foundry -v 1.10.3.travis.3002.6 --pre
+rvm:
+  - 2.2
 language: node_js
 node_js:
 - node
