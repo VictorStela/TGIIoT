@@ -1,3 +1,6 @@
+language: ruby
+before_install:
+  - gem install dpl-bluemix_cloud_foundry -v 1.10.3.travis.3002.6 --pre
 language: node_js
 node_js:
 - "node"
