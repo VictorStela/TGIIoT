@@ -1,6 +1,6 @@
 language: ruby
 rvm:
-  - 2.2
+  - 1.8.30
 before_install:
   - gem update --system 1.8.30
   - gem --version
@@ -8,7 +8,8 @@ language: node_js
 node_js:
 - node
 install: true
-
+script:
+  - echo "Skipping build"
 deploy:
   edge: true
   provider: bluemixcloudfoundry
