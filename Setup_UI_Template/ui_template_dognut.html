@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>My Stacked Bar Chart</title>
+</head>
+<body>
+    <canvas id="chart"></canvas>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.3.0/Chart.min.js"></script>
+
+    <script>
+        (function(scope) {
+        var timer = setInterval(function() { //check that the Morris libs are loaded, if not wait
+            clearInterval(timer);
+            var ctx = document.getElementById('chart');
+                var barChart = new Chart(ctx, {
+                    type: 'doughnut',
+                    data: {
+                        labels: ['Parada não apontada','Parada não planejada','Parada planejada','Setup','Ajuste / Regulagem','Refeição','Manutenção Planejada'],
+                        datasets: []
+                    },
+                    options: {
+                        scales: {},
+                        title: {
+                            display: true,
+                            position: 'top',
+                            fontSize: 20,
+                        }
+                    }
+                });
+
+            scope.$watch('msg', function (msg) { //watch for an incoming NR msg
+                if (msg) {
+
+                    var data = msg.datasets;
+                    var options = msg;
+                
+                function addData(chart, payload, config) {
+                    chart.options.title.text = config.options.title.text;
+                    chart.data.datasets = payload;
+                    chart.update({ duration: 0 });
+                }
+                addData(barChart,data,options);
+                };
+            }); //close out the watch 
+        }, 100); // close out the setInterval 
+        })(scope);
+    </script>
+</body>
+</html>
