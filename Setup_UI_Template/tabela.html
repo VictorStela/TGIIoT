@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table {
+border-collapse: collapse;
+width: 100%;
+border-collapse:separate;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+            border-radius: 5px;
+}
+
+th, td {
+padding: 8px;
+text-align: center;
+border-collapse:separate;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+            border-radius: 5px;
+}
+
+td{
+    background: #faf7ff;
+}
+
+th{
+    background:#cccfdb;
+    border-collapse:separate;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+            border-radius: 5px;
+}
+
+td:hover {
+    border-collapse:separate;
+    border: solid #ccc 1px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+            border-radius: 5px;
+    background-color: #cbc7ff;
+;
+    }
+
+</style>
+</head>
+<body>
+
+<h2></h2>
+
+<table>
+<tr>
+    <th>Ordem</th>
+    <th>SKU</th>
+    <th>Status</th>
+    <th>Data Inicial</th>
+    <th>Data Final</th>
+    <th>Data Reprogramada</th>
+</tr>
+<tr>
+    <td>{{msg.payload.payload.ordem}}</td>
+    <td>{{msg.payload.payload.sku}}</td>
+    <td>{{msg.payload.payload.sordem}}</td>
+    <td>{{msg.payload.payload.dataInicial}}</td>
+    <td>{{msg.payload.payload.dataFinal}}</td>
+    <td>{{msg.payload.payload.dataReprogramada}}</td>
+</tr>
+</table>
+<h2></h2>
+<table>
+    <tr>
+        <th>Ciclo padrão [s]</th>
+        <th>Velocidade padrão [pçs/min]</th>
+        <th>Tempo previsto</th>
+        <th>Tempo de ordem</th>
+        <th>Quantidade prevista</th>
+        <th>Quantidade produzida</th>
+        <th>OEE</th>
+    </tr>
+    <tr>
+        <td>{{msg.payload.payload.ciclo}}</td>
+        <td>{{msg.payload.payload.velocidade}}</td>
+        <td>{{msg.payload.payload.tempo}}</td>
+        <td>{{msg.payload.payload.tproduzido}}</td>
+        <td>{{msg.payload.payload.quantidade}}</td>
+        <td>{{msg.payload.payload.produzido}}</td>
+        <td>{{msg.payload.payload.oeeAcc}}</td>
+    </tr>
+</body>
+</html>
