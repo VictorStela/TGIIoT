@@ -1,56 +1,146 @@
-var process_id = global.get('process_id') || 0;
-if(process_id !== 150){
+if(flow.get('ordematual') === null){
+    return;
+}
+if(flow.get('ordematual').payload === null){
     return;
 }
 
-var ordem = global.get('ordematual');
+var ordem = flow.get('ordematual').payload;
+
+var lista = [];
+var comp = 0;
 var index = 0;
+var indexx = index+1;
+var total = 0;
 
-for(index in ordem.dadosDeProducao){
-    var tempoTotal = ordem.dadosDeProducao[index].timeTotal.reduce(function(anterior, atual) {
-    return anterior + atual;
-    });
+for(comp in ordem.dadosDeProducao){
+    lista.push(ordem.dadosDeProducao[comp].data);
 }
 
-for(index in ordem.dadosDeProducao){
-    var tempoCarga = ordem.dadosDeProducao[index].timeCarga.reduce(function(anterior, atual) {
-    return anterior + atual;
+var tam = lista.length
+
+while(indexx <= tam){
+    var ref = lista[index];
+    var valor = ordem.dadosDeProducao[ref].timeTotal.reduce(function(anterior, atual) {
+        return anterior + atual;
     });
+    total = total + valor;
+    index ++
+    indexx ++
 }
 
-for(index in ordem.dadosDeProducao){
-    var tempoPlan = ordem.dadosDeProducao[index].timeScheduledStop.reduce(function(anterior, atual) {
-    return anterior + atual;
+var tempoTotal = total;
+
+var comp = 0;
+var index = 0;
+var indexx = index+1;
+var total = 0;
+
+while(indexx <= tam){
+    var ref = lista[index];
+    var valor = ordem.dadosDeProducao[ref].timeCarga.reduce(function(anterior, atual) {
+        return anterior + atual;
     });
+    total = total + valor;
+    index ++
+    indexx ++
 }
 
-for(index in ordem.dadosDeProducao){
-    var tempoNApt = ordem.dadosDeProducao[index].timeNaoApontada.reduce(function(anterior, atual) {
-    return anterior + atual;
+var tempoCarga = total;
+
+var comp = 0;
+var index = 0;
+var indexx = index+1;
+var total = 0;
+
+while(indexx <= tam){
+    var ref = lista[index];
+    var valor = ordem.dadosDeProducao[ref].timeScheduledStop.reduce(function(anterior, atual) {
+        return anterior + atual;
     });
+    total = total + valor;
+    index ++
+    indexx ++
 }
 
-for(index in ordem.dadosDeProducao){
-    var tempoNPlan = ordem.dadosDeProducao[index].timeUnscheduledStop.reduce(function(anterior, atual) {
-    return anterior + atual;
+var tempoPlan = total;
+
+var comp = 0;
+var index = 0;
+var indexx = index+1;
+var total = 0;
+
+while(indexx <= tam){
+    var ref = lista[index];
+    var valor = ordem.dadosDeProducao[ref].timeNaoApontada.reduce(function(anterior, atual) {
+        return anterior + atual;
     });
+    total = total + valor;
+    index ++
+    indexx ++
 }
+
+var tempoNApt = total;
+
+var comp = 0;
+var index = 0;
+var indexx = index+1;
+var total = 0;
+
+while(indexx <= tam){
+    var ref = lista[index];
+    var valor = ordem.dadosDeProducao[ref].timeUnscheduledStop.reduce(function(anterior, atual) {
+        return anterior + atual;
+    });
+    total = total + valor;
+    index ++
+    indexx ++
+}
+
+var tempoNPlan = total;
+
+var comp = 0;
+var index = 0;
+var indexx = index+1;
+var total = 0;
 
 var tempoUnPlan = tempoNApt + tempoNPlan;
 
 var tempoTeorico = tempoCarga - tempoUnPlan;
 
-for(index in ordem.dadosDeProducao){
-    var prodTotal = ordem.dadosDeProducao[index].totalProduction.reduce(function(anterior, atual) {
-    return anterior + atual;
+while(indexx <= tam){
+    var ref = lista[index];
+    var valor = ordem.dadosDeProducao[ref].totalProduction.reduce(function(anterior, atual) {
+        return anterior + atual;
     });
+    total = total + valor;
+    index ++
+    indexx ++
 }
 
-for(index in ordem.dadosDeProducao){
-    var metaTotal = ordem.dadosDeProducao[index].metaProducao.reduce(function(anterior, atual) {
-    return anterior + atual;
+var prodTotal = total;
+
+var comp = 0;
+var index = 0;
+var indexx = index+1;
+var total = 0;
+
+while(indexx <= tam){
+    var ref = lista[index];
+    var valor = ordem.dadosDeProducao[ref].metaProducao.reduce(function(anterior, atual) {
+        return anterior + atual;
     });
+    total = total + valor;
+    index ++
+    indexx ++
 }
+
+var metaTotal = total;
+
+var comp = 0;
+var index = 0;
+var indexx = index+1;
+var total = 0;
 
 var tempoPerformance = parseInt(((metaTotal - prodTotal)*ordem.skuInformacoes.ciclo));
 if(tempoPerformance < 0){
@@ -59,11 +149,22 @@ if(tempoPerformance < 0){
 
 var tempoReal = tempoTeorico - tempoPerformance;
 
-for(index in ordem.dadosDeProducao){
-    var prodRuim = ordem.dadosDeProducao[index].badProduction.reduce(function(anterior, atual) {
-    return anterior + atual;
+while(indexx <= tam){
+    var ref = lista[index];
+    var valor = ordem.dadosDeProducao[ref].badProduction.reduce(function(anterior, atual) {
+        return anterior + atual;
     });
+    total = total + valor;
+    index ++
+    indexx ++
 }
+
+var prodRuim = total;
+
+var comp = 0;
+var index = 0;
+var indexx = index+1;
+var total = 0;
 
 var tempoQualidade = parseInt(prodRuim * ordem.skuInformacoes.ciclo);
 
