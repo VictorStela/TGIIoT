@@ -5,7 +5,7 @@
     "dependencies": {
         "node-red": "0.20.5",
         "node-red-contrib-moment": "3.0.2",
-        "node-red-dashboard": "2.14.0",
+        "node-red-dashboard": "2.17.1",
         "node-red-node-cf-cloudant": "0.2.17",
         "node-red-contrib-dsm": "0.14.1",
         "node-red-contrib-random-event-generator": "0.0.3",
